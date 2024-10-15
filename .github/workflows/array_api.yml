@@ -45,7 +45,7 @@ jobs:
     if: >
       needs.get_commit_message.outputs.message == 1
       && (github.repository == 'scipy/scipy' || github.repository == '')
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-22.04-ppc64le
     strategy:
       matrix:
         python-version: ['3.11']
@@ -60,7 +60,7 @@ jobs:
         submodules: recursive
 
     - name: Setup Python
-      uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5.2.0
+      uses: deadsnakes/action@v3.1.0 # v5.2.0
       with:
         python-version: ${{ matrix.python-version }}
         cache: 'pip'  # not using a path to also cache pytorch
