@@ -43,9 +43,9 @@ jobs:
   pytorch_cpu:
     name: Linux PyTorch/JAX/xp-strict CPU
     needs: get_commit_message
-    if: >
-      needs.get_commit_message.outputs.message == 1
-      && (github.repository == 'scipy/scipy' || github.repository == '')
+    # if: >
+    #   needs.get_commit_message.outputs.message == 1
+    #   && (github.repository == 'scipy/scipy' || github.repository == '')
     runs-on: ubuntu-22.04-ppc64le
     strategy:
       matrix:
