@@ -1,6 +1,7 @@
 name: Array API
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - maintenance/**
